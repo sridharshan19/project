@@ -1,0 +1,87 @@
+body{
+    font-family: 'Aboreto',sans-serif;
+    background-color:#fbe597;
+}
+p{
+    color: #ee6233;
+    font-size: x-large;
+    font-weight: bold;
+}
+.content{
+    border: none;
+    position: absolute;
+    top:50px;
+    left:450px;
+}
+h1{
+    color: #F7418F;
+    font-size: 50px;
+}
+.card{
+    width: 50%;
+    height: auto;
+    border: 6px solid #FC819E;
+    background-color: #FFF3C7;
+    padding-top: 300px;
+}
+audio{
+    margin: 10px auto;
+}
+table{
+    border: #FC819E;
+    width: 600px;
+    text-align: center;
+    color: #404040;
+    margin-bottom: 10px;
+}
+/* .table1 td{
+    width: 150px;
+/* } */
+ input{
+    width: 300px;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+
+} 
+.button{
+    width: 100px;
+    background-color: #f8abbd;
+    color: #F7418F;
+}
+.button:hover{
+    background-color: #fb92aa;
+}
+input:focus{
+    background-color: #FC819E;
+    border: none;
+
+}
+.background{
+    position: absolute;
+    left:345px;
+    width:690px;
+    top:10px;
+}
+.invite{
+    color:  #F7418F;
+    font-size: medium;
+    font-weight:300;
+    text-align: left;
+    padding: 10px 20px;
+}
+.ballon1{
+    position: absolute;
+    width: 200px;
+    left: 50px;
+    top: 50px;
+}
+.ballon2{
+    position: absolute;
+    width: 200px;
+    left: 1100px;
+    top: 50px;
+}
+.location{
+    width: 200px;
+}

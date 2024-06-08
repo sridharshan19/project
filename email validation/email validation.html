@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .registration-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .registration-form h2 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+        .form-group input.error {
+            border-color: red;
+        }
+        .form-group input.valid {
+            border-color: green;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit-btn:disabled {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="registration-form">
+    <h2>Register</h2>
+    <form id="regForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <span class="error" id="nameError">Name is required</span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email">
+            <span class="error" id="emailError">Enter a valid email</span>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" name="phone">
+            <span class="error" id="phoneError">Enter a valid number</span>
+        </div>
+        <button type="submit" class="submit-btn">Register</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('regForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var isValid = true;
+
+        var name = document.getElementById('name');
+        var email = document.getElementById('email');
+        var phone = document.getElementById('phone');
+
+        var nameError = document.getElementById('nameError');
+        var emailError = document.getElementById('emailError');
+        var phoneError = document.getElementById('phoneError');
+
+        if (name.value.trim() === '') {
+            name.classList.add('error');
+            nameError.style.display = 'block';
+            isValid = false;
+        } else {
+            name.classList.remove('error');
+            name.classList.add('valid');
+            nameError.style.display = 'none';
+        }
+
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email.value.trim())) {
+            email.classList.add('error');
+            emailError.style.display = 'block';
+            isValid = false;
+        } else {
+            email.classList.remove('error');
+            email.classList.add('valid');
+            emailError.style.display = 'none';
+        }
+
+        var phonePattern = /^[0-9]+$/;
+        if (!phonePattern.test(phone.value.trim())) {
+            phone.classList.add('error');
+            phoneError.style.display = 'block';
+            isValid = false;
+        } else {
+            phone.classList.remove('error');
+            phone.classList.add('valid');
+            phoneError.style.display = 'none';
+        }
+
+        if (isValid) {
+            alert('Registration successful!');
+            // Here you can write code to submit the form data to the server
+        }
+    });
+</script>
+
+</body>
+</html>
